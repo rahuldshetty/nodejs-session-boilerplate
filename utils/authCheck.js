@@ -12,7 +12,7 @@ exports.authCheck = (req,res,callback) =>{
 				title:'Unknown Account!',
 				icon:'warning',
 				color:'red darken-4',
-				textcolor:'blue-grey-text text-lighten-5',
+				textcolor:'	blue-grey-text text-lighten-5',
 				linkcolor:'amber-text text-lighten-2',
 				message:'Unable to find to your account.'
 			};

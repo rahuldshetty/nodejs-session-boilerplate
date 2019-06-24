@@ -7,6 +7,7 @@ const bodyparser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
 const authUtil = require('./utils/authCheck.js');
+const path = require('path');
 
 let app = express();
 
@@ -17,12 +18,13 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(bodyparser.json());
 app.use(session({
 	secret:'ABCDEFGH',
-	cookie:{maxAge:60000},
+	cookie:{maxAge:24*60*60*1000},
 	resave:false,
 	saveUninitialized:false
 }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use('/static',express.static(path.join(__dirname,'public')));
 
 app.use('/auth',authRoute);
 app.use('/home',homeRoute);

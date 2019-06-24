@@ -24,7 +24,8 @@ exports.register = function(obj){
 			'name':name,
 			'mobile':mobile,
 			'email':email,
-			'password':password
+			'password':password,
+			'desc':''
 		});
 
 

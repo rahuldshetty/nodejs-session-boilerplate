@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+		<title>Home</title>
 		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 		 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 		 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+	    <style>
+	        #bgImg {
+	            height: 200px;
+	        }
+	        #profileImg {
+	            width: 100px;
+	            height: 100px;
+	            top: 75%;
+	            left: 50%;
+	            transform: translate(-50%, 0);
+	        }
+	    </style>
 </head>
 <body>
-	<div class="container">
-		<h1>Sample</h1>
-	</div>
+	<div class=" navbar-fixed">
+	<nav class="deep-purple accent-4">
+	    <div class="nav-wrapper container">
+	  		<span>
+	      <form>
+	        <div class="input-field">
+	          <input id="search" type="search" required>
+	          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+	          <i class="material-icons">close</i>
+	        </div>
+	      </form>
+	   </span>
+	    </div>
+	</nav>
+</div>
 
+		<div class="container">
+		        <div class="row">
+		            <div class="col offset-m3 s12 m6">
+		                <div class="card">
+		                    <div class="card-image">
+		                        <img src="https://materializecss.com/images/sample-1.jpg" id = "bgImg">
+		                        <span class="card-title"></span>
+		                        <a class="btn-floating halfway-fab waves-effect waves-light red"  id = "profileImg">
+		                            <img src="/static/images/profile.png" alt="">
+		                        </a>
+		                    </div>
+		                    <br>
+		                    <div class="card-content center">
+		                        <h5 class = "indigo-text"><%=user.name%></h5>
+		                        <p><%=user.email%></p>
+		                        <p><%=user.mobile%></p>
+		                        <p><%=user.desc%></p>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
 </body>
 </html>
