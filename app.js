@@ -2,9 +2,11 @@ const PORT = 3000;
 
 const express = require('express');
 const authRoute = require('./routes/auth-route');
+const homeRoute = require('./routes/home-route');
 const bodyparser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
+const authUtil = require('./utils/authCheck.js');
 
 let app = express();
 
@@ -23,13 +25,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/auth',authRoute);
+app.use('/home',homeRoute);
 
 
 
 app.get('/',(req,res)=>{
-	if(req.user){
-		res.redirect('/auth/success');
-	}
+	if(req.user)
+		res.redirect('/auth/success');		
 	else
 		res.render("index");
 });

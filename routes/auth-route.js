@@ -4,14 +4,13 @@ const passport = require('../utils/passport');
 
 router.get('/success',(req,res)=>{
 	if(req.user)
-		res.send("Welcome User....");
+		res.redirect('/home/');
 	else
 		res.redirect('/');
 });
 
 router.get('/error',(req,res)=>{
 	var data = req.session['errordata'];
-	console.log(data);
 	if(!data){
 		data={
 			title:'Invalid Credentials',
@@ -22,6 +21,7 @@ router.get('/error',(req,res)=>{
 			message:'Invalid email or password. Please check and try again later.'
 		};
 	}
+	req.session['errordata']=null;
 	res.render('message',{
 		data:data
 	});
