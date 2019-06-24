@@ -1,6 +1,11 @@
 const loki = require('lokijs');
-let db = new loki('loki.json');
-let User = db.addCollection('User',{'unique':'email'});
+let db = new loki('loki.json',{
+        autoload: true,
+        autosave: true, 
+        autoloadCallback : databaseInitialize,
+        autosaveInterval: 4000
+    });
+let User;
 
 exports.findByMail = (email) =>{
 	return User.find({'email':email})[0];
@@ -21,11 +26,17 @@ exports.register = function(obj){
 			'email':email,
 			'password':password
 		});
+
+
 		console.log('Inserted Record',name,email);
 		return true;
 	}
 }
 
-exports.checkLogin = function(){
+function databaseInitialize(){
+	User = db.getCollection("User");
+	if(User===null){
+		User = db.addCollection('User',{'unique':'email'});
+	}
 
 }
