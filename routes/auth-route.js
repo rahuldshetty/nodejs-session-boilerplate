@@ -11,6 +11,17 @@ router.get('/success',(req,res)=>{
 
 router.get('/error',(req,res)=>{
 	var data = req.session['errordata'];
+	console.log(data);
+	if(!data){
+		data={
+			title:'Invalid Credentials',
+			icon:'warning',
+			color:'red darken-4',
+			textcolor:'blue-grey-text text-lighten-5',
+			linkcolor:'amber-text text-lighten-2',
+			message:'Invalid email or password. Please check and try again later.'
+		};
+	}
 	res.render('message',{
 		data:data
 	});
