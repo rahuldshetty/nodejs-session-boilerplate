@@ -1,0 +1,168 @@
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Login Page</title>
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+	</head>
+
+	<style type="text/css">
+		body{
+			margin:0;
+			padding:0;
+		}
+		.menu-color{
+			background: #00BFFF;
+		}
+		img.custom-size{
+			height:20px;
+		}
+	</style>
+
+	<body>
+
+		<div class="navbar-fixed">
+		  <nav class="menu-color">
+			   <div class="nav-wrapper menu-color container">
+			      <a href="#" class="brand-logo">
+			      	<img src="boom.png" height="70" width="350"	alt="Chat IO">
+			      </a>
+			      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			      <ul class="right hide-on-med-and-down">
+			        <li><a href="/">Home</a></li>
+			        <li><a href="#">About Us</a></li>
+			      </ul>
+			    </div>
+			  </nav>
+		</div>
+			  <ul class="sidenav" id="mobile-demo">
+			  	 <li><a href="/">Home</a></li>
+			        <li><a href="#">About Us</a></li>
+			      </ul>
+
+	        
+		<div class="container">
+			
+			<div class="row">
+				<div class="col s12 m12 l8">
+					
+				<div class="card darken-1">
+			        <div class="card-content black-text text-darken-1">
+			        	<span class="card-title center">Sign Up</span>
+			         	
+			        		<form method="POST" action="/auth/register">
+
+			         		<div class="row">
+						        <div class="input-field col s12 m6">
+						        	<i class="material-icons prefix">account_circle</i>
+						          	<input id="nameid" name="name" type="text" class="validate" required="" value="Rahul">
+						          	<label for="nameid">Name</label>
+						        </div>
+						   
+						   
+								<div class="input-field col s12 m6">
+						          <i class="material-icons prefix">phone</i>
+						          <input id="telephoneid" name="mobile" type="tel" class="validate" required="" value="9483913464">
+						          <label for="telephoneid">Mobile Number</label>
+						     	</div>
+						 	</div>
+
+						      <div class="row">
+						        <div class="input-field col s12 m6">
+						        	<i class="material-icons prefix">email</i>
+						          <input id="emailid" type="email" name="regEmail" class="validate" required="" value="35rahuldshetty@gmail.com">
+						          <label for="emailid">Email Address</label>
+						        </div>
+						        <div class="input-field col s12 m6">
+						          <i class="material-icons prefix">lock</i>
+						          <input id="passwordid" type="password" name="regPass" class="validate" required="" value="password">
+						          <label for="passwordid">Password</label>
+						        </div>
+						    </div>
+
+						    <div class="row">
+						      	<div class="center">
+						      	<button class="btn waves-effect waves-light" type="submit">Register
+								    <i class="material-icons right">send</i>
+								 </button>
+						      	</div>
+						  	</div>
+						</form>
+			        </div>
+	      </div>
+
+
+				</div>
+				<div class="col s12 m12 l4">
+					<div class="card darken-1">
+						<div class="card-content black-text text-darken-1">
+				        	<span class="card-title center">Login</span>
+				        	<form method="POST" action="/auth/login"> 
+				        	 <div class="row">
+							        <div class="input-field col s12">
+							        	<i class="material-icons prefix">account_circle</i>
+							          <input id="logemailid" type="email" name="loginEmail" class="validate" required="" value="35rahuldshetty@gmail.com">
+							          <label for="logemailid">Email Address</label>
+							        </div>
+							 </div>
+							     
+							      <div class="row">
+							        <div class="input-field col s12">
+							        	<i class="material-icons prefix">lock</i>
+							          <input id="passid" type="password" name="loginPassword" class="validate" required="" value="password">
+							          <label for="passid">Password</label>
+							        </div>
+							      </div>
+
+							      <div class="row">
+							      	  <div class="center">
+							      	<button class="btn waves-effect waves-light" type="submit">Login
+									    <i class="material-icons right">send</i>
+									 </button>
+							      </div>
+
+				        		</div>
+				        </div>
+				    </form>
+				</div>
+				
+			</div>
+
+
+
+		</div>
+			
+
+
+		<script type="text/javascript">
+
+			document.addEventListener('DOMContentLoaded', function() {
+	    		var elems = document.querySelectorAll('.sidenav');
+	    		var instances = M.Sidenav.init(elems, options);
+	  		});
+			
+			$(document).ready(function(){
+	    		$('.sidenav').sidenav();
+	  		});
+	        
+	        $(document).ready(function(){
+	    		$('select').formSelect();
+	  		});
+
+
+			  $(document).ready(function(){
+			    $('.slider').slider({
+			    	height:305,
+			    	interval:1000
+			    });
+			  });
+	        
+
+		</script>
+
+	</body>
+	</html>

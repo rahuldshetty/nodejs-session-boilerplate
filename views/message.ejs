@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	<%	if(data)	%>
+		<%=data.title%>
+	</title>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<style type="text/css">
+	#regMsg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width:50%;
+	}
+</style>
+<body>
+	<div class="">
+		  <div class="" id = "regMsg">
+		    <div class="	">
+		      <div class="card hoverable <%=data.color%> <%=data.textcolor%>" >
+		        <div class="card-content">
+		          <span class="card-title">
+		          	<% if(data) %>
+		          		<%= data.title %>
+		          	<% if(data.icon) %>
+		          		<i class="small material-icons"><%=data.icon%></i>
+		          </span>
+		          <p>
+		          	<% if(data) %>
+		          	<%= data.message %>
+		          </p>
+		        </div>
+		        <div class="card-action">
+		          <a href="/" class="<%=data.linkcolor%>">Go Back Home</a>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
+
+	</div>
+
+</body>
+</html>
